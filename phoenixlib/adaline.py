@@ -12,6 +12,8 @@ class Adaline:
 	def fit(self, X, Y):
 		"""Uses full batch gradient descent."""
 		prng = np.random.RandomState(self.__random_seed)
+		# Initialize the weights from a normal distribution with a mean of 0 
+		# and a standard deviation of 0.01
 		self.__w = prng.normal(0.0, 0.01, X.shape[1])
 		self.__b = 0.0
 		self.epoch_errors = []
