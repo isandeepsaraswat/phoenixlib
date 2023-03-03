@@ -35,12 +35,12 @@ class AdalineSGD:
 				self.__b += 2.0 * self.__eta * error
 				# Save the squared-error for each input
 				losses.append(error**2)
-			# Save the mean-sqaured-error for this epoch epoch
+			# Save the mean-sqaured-error for this epoch
 			self.epoch_errors.append(np.mean(losses))
 		return self
 
 	def __shuffle(self, X : np.ndarray, Y : np.ndarray) -> tuple[np.ndarray, np.ndarray]:
-		permuted_idxs = self.__prng.rgen.permutation(len(Y))
+		permuted_idxs = self.__prng.permutation(len(Y))
 		return X[permuted_idxs], Y[permuted_idxs]
 
 	def activation(self, X : np.ndarray) -> np.ndarray:
