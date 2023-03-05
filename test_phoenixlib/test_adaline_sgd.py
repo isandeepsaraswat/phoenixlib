@@ -33,7 +33,7 @@ if __name__ == "__main__":
 	# Use Adaline with Stochastic Gradient Descent on the standardized data.
 	adln_sgd = AdalineSGD(learning_rate=0.01, num_iterations=15, random_seed=1)
 	adln_sgd.fit(X_std, Y)
-    # Plot the decision boundary
+	# Plot the decision boundary
 	plot_decision_regions(X_std, Y, classifier=adln_sgd)
 	plt.title("Adaline - with Stochastic Gradient Descent")
 	plt.xlabel("Sepal length [standardized]")
@@ -41,7 +41,7 @@ if __name__ == "__main__":
 	plt.legend(loc="upper left")
 	plt.tight_layout()
 	plt.show()
-    # Plot the errors vs epochs.
+	# Plot the errors vs epochs.
 	plt.plot(range(1, len(adln_sgd.epoch_errors) + 1), adln_sgd.epoch_errors, marker="o")
 	plt.xlabel("Epochs")
 	plt.ylabel("Average loss")
